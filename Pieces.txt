@@ -1,0 +1,68 @@
+class Pieces {
+    constructor(ctx, canvas, size, board, x, y) {
+        this.ctx = ctx
+        this.canvas = canvas
+
+        this.size = size
+        this.board = board
+
+        this.speed = 1
+
+        this.x = x
+        this.y = y
+
+        this.dropInterval = 5000
+        this.dropTimer = 0
+    }
+
+    manager() {
+        if (this.piece === 'L') {
+
+        }
+    }
+
+    draw() {
+        // this.manager()
+
+        for (let i = 0; i < this.board.length; i++) {
+            for (let j = 0; j < this.board[i].length; j++) {
+
+                this.x = j
+                this.y = i
+
+                if (this.board[i][j] === 1) {
+                    this.ctx.fillStyle = "#000"
+
+                    this.ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size)
+                }
+                if (this.board[i][j] === 0) {
+                    this.ctx.strokeStyle = "blue"
+                    this.ctx.lineWidth = 1
+
+                    this.ctx.strokeRect(this.x * this.size, this.y * this.size, this.size, this.size)
+                }
+            }
+        }
+    }
+
+    applyGravity() {
+        for (let i = 0; i < this.board[0].length; i++) {
+            for (let j = this.board.length - 1; j > 0; j--) {
+                if (this.board[j][i] === 0 && this.board[j - 1][i] === 1) {
+                    console.log(j, i)
+                    this.board[j][i] = 1
+                    this.board[j - 1][i] = 0
+                }
+            }
+        }
+    }
+
+    update(deltaTime) {
+        this.dropTimer += Number.isNaN(deltaTime) ? 0 : deltaTime
+
+        if (this.dropTimer >= this.dropInterval) {
+            this.applyGravity()
+            this.dropTimer = 0
+        }
+    }
+}

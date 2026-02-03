@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* background-color: #202020; Fundo escuro para destacar o jogo */
+    color: white;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileControl {
+    display: flex;
+
+    gap: 20px;
+}
+
+.mobileControl button{
+    width: 50px;
+    height: 50px;
+
+    border: 2px solid black;
+    border-radius: 3px;
+
+    background-color: white;
+
+    box-shadow: 0 -5px 4px 1px #555555af inset, 0 5px 0 0 #5555556c;
+
+    cursor: pointer;
+
+    transition: all 0.1s;
+}
+
+.mobileControl button:active {
+    transform: translateY(1px);
+    box-shadow: 0 -3px 4px 1px #555555af inset, 0 4px 0 0 #5555556c;
+}
+
+.directional {
+    display: flex;
+}
+
+.mobileControl button {
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    position: absolute;
+
+    height: 400px;
+}
+
+#pause {
+    position: absolute;
+}
+
+#left {
+    background-image: url("./arrow-left.png");
+}
+#right {
+    background-image: url("./arrow-right.png");
+}
+#down {
+    background-image: url("./arrow-down.png");
+}
+#hardDrop {
+    background-size: 20px;
+    background-position: top;
+    background-image: url("./hard-drop.png");
+}
+#rotate {
+    background-image: url("./rotate.png");
+}
+
+#start {
+    position: absolute;
+}
