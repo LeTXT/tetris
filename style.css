@@ -9,22 +9,33 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: space-around;
     overflow: hidden;
     /* background-color: #202020; Fundo escuro para destacar o jogo */
     color: white;
     font-family: sans-serif;
+
+    margin: 0;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+}
+
+canvas {
+    border: solid 1px black;
+    margin-top: 10px;
 }
 
 .mobileControl {
     display: flex;
+
+    height: 100px;
+
+    transform: translateY(-15px);
 
     gap: 20px;
 }
@@ -33,7 +44,7 @@ body {
     width: 50px;
     height: 50px;
 
-    border: 2px solid black;
+    /* border: 2px solid black;
     border-radius: 3px;
 
     background-color: white;
@@ -42,16 +53,26 @@ body {
 
     cursor: pointer;
 
-    transition: all 0.1s;
+    transition: all 0.1s; */
 }
 
 .mobileControl button:active {
-    transform: translateY(1px);
-    box-shadow: 0 -3px 4px 1px #555555af inset, 0 4px 0 0 #5555556c;
+    /* transform: translateY(1px);
+    box-shadow: 0 -3px 4px 1px #555555af inset, 0 4px 0 0 #5555556c; */
+}
+
+.action button {
+    border-radius: 50px;
+}
+
+.action button:first-child {
+    transform: translateY(40px);
 }
 
 .directional {
     display: flex;
+
+    
 }
 
 .mobileControl button {
@@ -83,6 +104,7 @@ body {
 }
 #down {
     background-image: url("./arrow-down.png");
+    transform: translateY(50px);
 }
 #hardDrop {
     background-size: 20px;

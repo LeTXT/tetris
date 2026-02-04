@@ -11,7 +11,8 @@ export class Renderer {
         this.BOARD_WIDTH = 10 * this.CELL_SIZE
         this.BOARD_HEIGHT = 20 * this.CELL_SIZE
 
-        this.UI_HEIGHT = 70
+        this.UI_HEIGHT = 40
+
 
         this.canvas.width = this.BOARD_WIDTH
         this.canvas.height = this.BOARD_HEIGHT + this.UI_HEIGHT
@@ -83,13 +84,6 @@ export class Renderer {
             for (let col = 0; col < element[row].length; col++) {
                 const cell = element[row][col]
                 if (cell > 0) {
-                    // this.ctx.fillStyle = this.palette[cell]
-                    // this.ctx.fillRect(
-                    //     col * this.CELL_SIZE,
-                    //     this.UI_HEIGHT + row * this.CELL_SIZE,
-                    //     this.CELL_SIZE,
-                    //     this.CELL_SIZE
-                    // )
                     const SPRITE_SIZE = 81
 
                     const spriteX = (cell - 1) * SPRITE_SIZE
@@ -129,20 +123,6 @@ export class Renderer {
                 const cell = shape[row][col]
 
                 if (cell > 0) {
-                    // this.ctx.fillStyle = this.palette[cell]
-                    // this.ctx.fillRect(
-                    //     offsetX + col * this.PREVIEW_CELL,
-                    //     offsetY + row * this.PREVIEW_CELL,
-                    //     this.PREVIEW_CELL,
-                    //     this.PREVIEW_CELL
-                    // )
-                    // this.ctx.drawImage(
-                    //     this.img,
-                    //     offsetX + col * this.PREVIEW_CELL,
-                    //     offsetY + row * this.PREVIEW_CELL,
-                    //     this.PREVIEW_CELL,
-                    //     this.PREVIEW_CELL
-                    // )
                     const SPRITE_SIZE = 81
 
                     const spriteX = (cell - 1) * SPRITE_SIZE
