@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Digital+Numbers&display=swap');
+
+.nes-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 152px;
+    width: 100%;
+    max-width: 390px;
+
+    background: #eaeaea;
+
+    padding: 15px 14px 9px 14px;
+
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.bg-black {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    background: #343434;
+
+    padding: 5px 18px;
+
+    width: 100%;
+}
+
+.direction {
+    display: flex;
+    justify-content: space-between;
+}
+.direction button {
+    width: 61px;
+    height: 55px;
+
+    background-color: #1D1D1D;
+
+    border: solid 2px #FFF9FB;
+    border-radius: 2px;
+
+    transition: 0.1s;
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.direction button:active {
+    transform: scale(0.95);
+
+    background-color: #0e0e0e;
+}
+
+.direction button.pressed {
+    transform: scale(0.95);
+
+    background-color: #0e0e0e;
+}
+
+.direction .left {
+    background-image: url('./image/left-nes.png');
+
+    background-position: 10px;
+
+}
+
+.direction .right{
+    background-image: url('./image/right-nes.png');
+
+    background-position: 15px;
+}
+
+.info-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 55px;
+}
+
+.info-game canvas {
+    height: 30px;
+    width: 30px;
+}
+
+.info-game .score, .info-game .level {
+    display: flex;
+
+    font-family: 'Digital Numbers', sans-serif;
+    color: #ff0000;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 3px;
+}
+
+.action-btn .bg-grey {
+    padding: 3px;
+
+    background-color: #D9D9D9;
+}
+
+.bg-grey button {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 55px;
+    border: none;
+
+    background-color: #D93637;
+}
+
+.bg-grey button {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-grey .hard-drop {
+    background-image: url('./image/hard-drop.png');
+}
+
+.bg-grey .rotate {
+    background-image: url('./image/rotate.png');
+    background-position: 10px;
+}
+
+.action-btn .down {
+    width: 55px;
+    height: 60px;
+
+    background-color: #1D1D1D;
+
+    border: solid 2px #FFF9FB;
+    border-radius: 2px;
+
+    transition: 0.1s;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url('./image/down-nes.png');
+}
+
+.action-btn .down:active {
+    transform: scale(0.95);
+
+    background-color: #0e0e0e;
+}
+
+.action-btn button.pressed {
+    transform: scale(0.95);
+
+    background-color: #0e0e0e;
+}

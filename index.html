@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tetris</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="joysticks.css">
     <script type="module" src="main.js"></script>
 </head>
 <body>
@@ -12,27 +13,44 @@
         <div>
             <button id="pause">pause</button>
         </div>
-        <canvas id="canvas" width="350" height="600"></canvas></br>
+        <canvas id="canvas"></canvas>
         
-        <div style="margin-top: 10px;">
+        <div style="margin-top: 5px;">
             <div class="menu" id="menu">
                 <button id="play">play</button>
                 <button id="restart">restart</button>
             </div>
 
             <button id="start">Start Game</button>
-            
-            
         </div>
-        <div class="mobileControl">
-            <div class="directional">
-                <button id="left"></button>
-                <button id="down"></button>
-                <button id="right"></button>
-            </div>
-            <div class="action">
-                <button id="rotate"></button>
-                <button id="hardDrop"></button>
+        <div class="nes-control" id="joystick">
+            <div class="bg-black">
+                <div class="direction">
+                    <button class="left" id="left"></button>
+
+                    <div class="info-game">
+                        <div class="score">
+                            <p>Score: </p>
+                            <p id="score"></p>
+                        </div>
+                        <canvas id="preview-next"></canvas>
+                        <div class="level">
+                            <p>Level: </p>
+                            <p id="level"></p>
+                        </div>
+                    </div>
+
+                    <button class="right" id="right"></button>
+                </div>
+                <div class="action-btn">
+                    <div class="bg-grey">
+                        <button class="hard-drop" id="hard-drop"></button>
+                    </div>
+                    <button class="down" id="down"></button>
+                    <div class="bg-grey">
+                        <button class="rotate" id="rotate"></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

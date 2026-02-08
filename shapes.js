@@ -1,7 +1,7 @@
 export const SHAPES = {
     I: {
         id: 1,
-        color: 'cyan',
+        color: '#17FFEE',
         pivot: { x: 1.5, y: 1.5 },
 
         rotations: [
@@ -22,7 +22,7 @@ export const SHAPES = {
 
     O: {
         id: 2,
-        color: 'yellow',
+        color: '#EDFF00',
         pivot: { x: 0.5, y: 0.5 },
 
         rotations: [
@@ -35,7 +35,7 @@ export const SHAPES = {
 
     T: {
         id: 3,
-        color: 'purple',
+        color: '#C200FB',
         pivot: { x: 1, y: 1 },
 
         rotations: [
@@ -64,7 +64,7 @@ export const SHAPES = {
 
     S: {
         id: 4,
-        color: 'green',
+        color: '#A1FF0A',
         pivot: { x: 1, y: 1 },
 
         rotations: [
@@ -83,7 +83,7 @@ export const SHAPES = {
 
     Z: {
         id: 5,
-        color: 'red',
+        color: '#DC041B',
         pivot: { x: 1, y: 1 },
 
         rotations: [
@@ -102,7 +102,7 @@ export const SHAPES = {
 
     J: {
         id: 6,
-        color: 'blue',
+        color: '#0AFF99',
         pivot: { x: 1, y: 1 },
 
         rotations: [
@@ -129,7 +129,7 @@ export const SHAPES = {
 
     L: {
         id: 7,
-        color: 'orange',
+        color: '#FFBA08',
         pivot: { x: 1, y: 1 },
 
         rotations: [

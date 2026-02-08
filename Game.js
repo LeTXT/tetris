@@ -1,4 +1,5 @@
 import { Renderer } from "./Renderer.js"
+import { UiRenderer } from "./UiRenderer.js"
 import { Board } from "./Board.js"
 import { Piece } from "./Piece.js"
 import { Input } from "./Input.js"
@@ -21,6 +22,7 @@ export class Game {
 
         this.input = new Input()
         this.renderer = new Renderer()
+        this.uiRenderer = new UiRenderer()
 
         this.scoreManager = new ScoreManager()
 
@@ -269,9 +271,9 @@ export class Game {
         this.renderer.clear()
         this.renderer.renderBoard(this.board.grid, this.clearingLines)
 
-        this.renderer.renderPiece(this.piece.getCells(), this.piece.x, this.piece.y)
-        this.renderer.renderUi(this.scoreManager)
-        this.renderer.renderNext(this.pieceManager)
+        this.renderer.renderPiece(this.piece.getCells())
 
+        this.uiRenderer.renderUi(this.scoreManager)
+        this.uiRenderer.renderNext(this.pieceManager)
     }
 }

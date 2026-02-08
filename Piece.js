@@ -4,8 +4,9 @@ export class Piece {
 
         this.rotationIndex = 0 
         this.shape = []
+        this.color = this.type?.color
 
-        this.x = 3
+        this.x = 5
         this.y = -1
 
         this.#updateShape()
@@ -42,6 +43,7 @@ export class Piece {
         // movimento local ??
         return {
             shape: this.shape,
+            color: this.color,
             x: this.x,
             y: this.y
         }

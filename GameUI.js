@@ -11,11 +11,15 @@ export class GameUI {
         this.playBtn = document.getElementById('play')
         this.menu = document.getElementById('menu')
 
+        this.joystick = document.getElementById('joystick')
+
         this.btnLeft = document.getElementById('left')
         this.btnRight = document.getElementById('right')
         this.btnDown = document.getElementById('down')
         this.btnRotate = document.getElementById('rotate')
-        this.btnHardDrop = document.getElementById('hardDrop')
+        this.btnHardDrop = document.getElementById('hard-drop')
+        this.scoreUI = document.getElementById('score')
+        this.levelUI = document.getElementById('level')
 
         this.init()
     }
@@ -25,7 +29,20 @@ export class GameUI {
         this.centralizeItem(this.menu)
         this.localPause(this.pauseBtn)
         this.hideAllButtons()
+        this.infoGame()
+        this.bindScoreUpdates()
+        this.hideJoystick()
         this.bindEvents()
+    }
+
+    infoGame() {
+        if (this.scoreUI) this.scoreUI.textContent = this.game.scoreManager.score
+        if (this.levelUI) this.levelUI.textContent = this.game.scoreManager.level
+    }
+
+    bindScoreUpdates() {
+        if (!this.game?.scoreManager) return
+        this.game.scoreManager.onChange = () => this.infoGame()
     }
 
     bindEvents() {
@@ -73,10 +90,19 @@ export class GameUI {
         this.pauseBtn.style.display = 'none'
     }
 
+    hideJoystick() {
+        if (this.joystick) this.joystick.style.display = 'none'
+    }
+
+    showJoystick() {
+        if (this.joystick) this.joystick.style.display = 'flex'
+    }
+
     startGame() {
         this.game.start()
         this.startBtn.style.display = 'none'
         this.pauseBtn.style.display = 'inline'
+        this.showJoystick()
     }
 
     restartGame() {
